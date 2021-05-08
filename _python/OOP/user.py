@@ -48,3 +48,5 @@ omar = User("omar Alhaddar", "omar@gmail.com")
 # guido.transfer_money(lana, 30)
 # print(guido.account_balance)
 # print(lana.account_balance)
+
+print(__name__)
