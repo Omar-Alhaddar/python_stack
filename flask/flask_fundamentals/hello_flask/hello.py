@@ -10,8 +10,11 @@ def success():
 
 @app.route('/<name>')
 def hello(name):
-    print(name)
     return "Hello, " + name
+
+@app.route('/<username>/<id>')
+def show_user_profile(username, id):
+    return "username: " + username + ", id: " + id
 
 if __name__=="__main__":
     app.run(debug=True)

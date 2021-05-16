@@ -1,0 +1,16 @@
+*{
+    margin: 0px;    
+    padding: 0px;
+}
+.red{
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    display: inline-block;
+}
+.black{
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    display: inline-block;
+}
