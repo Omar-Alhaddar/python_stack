@@ -1,0 +1,11 @@
+main{
+    margin: 0 auto;
+}
+h3{
+    border: 3px solid black;
+    width: 250px;
+}
+div{
+    border: 3px solid black;
+    width: 500px;
+}
