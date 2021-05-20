@@ -1,0 +1,31 @@
+Create 3 users:
+user.objects.create(first_name="omar",last_name="alhaddar",email_address="omaralhaddar11@gmail.com",age=23)
+user.objects.create(first_name="hani",last_name="keko",email_address="hanilove1@gmail.com",age=22)
+user.objects.create(first_name="ahmad",last_name="raddad",email_address="ahmadlove22@gmail.com",age=20)
+
+Retrieve all the users:
+user.objects.all()
+
+Retrieve the last user:
+user.objects.last()
+
+Retrieve the first user:
+user.objects.first()
+
+Change the user with id=3 so their last name is Pancakes:
+user_to_update = user.objects.get(id=3)
+user_to_update.last_name = "Pancakes"
+user_to_update.save()
+
+Delete the user with id=2 from the database:
+user_to_delete = user.objects.get(id=2)
+user_to_delete.delete()
+
+Get all the users, sorted by their first name:
+user.objects.all().order_by("first_name")
+
+Get all the users, sorted by their first name in descending order:
+user.objects.all().order_by("-first_name")
+
+
+
