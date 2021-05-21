@@ -1,16 +1,15 @@
 *{
     margin: 0px;    
     padding: 0px;
+    margin: 0 auto;
 }
-.red{
-    width: 70px;
-    height: 70px;
+table tr td {
+    width: 50px;
+    height: 50px;
+}
+.color1{
     background-color: red;
-    display: inline-block;
 }
-.black{
-    width: 70px;
-    height: 70px;
+.color2{
     background-color: black;
-    display: inline-block;
 }
