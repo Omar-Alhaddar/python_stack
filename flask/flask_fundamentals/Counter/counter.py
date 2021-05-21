@@ -10,9 +10,14 @@ def index():
     else:
         session['count'] = 1
     return render_template('counter.html')
-    
-@app.route('/destroy_session')
-def destroy_session():
+
+@app.route('/addtwo')
+def addtwo():
+    session['count']+=1
+    return redirect('/')
+
+@app.route('/reset')
+def reset():
     session.clear()
     return redirect("/")
 

@@ -10,12 +10,26 @@
             text-align: center;
             margin: 0 auto;
         }
+        .add{
+          background-color: red;
+        }
+        .reset{
+          background-color: green;
+        }
     </style>
   </head>
   <body>
     <main>
         <h1>Counter</h1>
         <h2>{{session['count']}}</h2>
+
+        <form action='/addtwo' >
+          <input class="add" type="submit" value="add two visits!">
+        </form>
+
+        <form action='/reset'>
+          <input class="reset" type="submit" value="reset">
+        </form>
     </main>
   </body>
 </html>
