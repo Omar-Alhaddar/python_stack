@@ -17,5 +17,5 @@ from django.urls import path,include
 
 urlpatterns = [
     
-    path('shows', include('semiapp.urls')),
+    path('shows/', include('semiapp.urls')),
 ]

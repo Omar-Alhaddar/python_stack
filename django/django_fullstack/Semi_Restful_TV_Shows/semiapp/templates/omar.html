@@ -14,17 +14,25 @@
             <form action="/shows/create" method='POST'>
                 {% csrf_token %}
                 <lable>title<lable>
-                <input type="text" name="title">
+                <input type="text" name="title" required>
                 <lable>Network</lable>
-                <input type="text" name="network">
+                <input type="text" name="network" required>
                 <lable>Release Date</lable>
-                <input type="date" name="date">
+                <input type="date" name="date" required>
                 <lable>Description</lable>
-                <textarea name="desc"></textarea>
+                <textarea name="desc"></textarea required>
                 
         
                 <input type="submit" value="Create">
             </form>
         </center>
-    </body>
+            {% if messages %}
+            <ul class="messages">    
+                {% for message in messages %}    
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+    </body> 
 </html>
