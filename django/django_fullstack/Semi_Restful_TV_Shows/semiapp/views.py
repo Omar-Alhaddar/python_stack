@@ -9,14 +9,12 @@ def omar1(request):
     }
     return render(request,"abdullah.html",context)
 
-def create(request, id):
+def create(request):
     Show.objects.create(title=request.POST['title'],network=request.POST['network'],reld=request.POST['date'],desc=request.POST['desc'])
     x = Show.objects.last()
     context ={
         'x': x 
     }
-    y = id
-    
     return redirect("/shows/" + str(x.id))
 
 

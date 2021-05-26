@@ -11,7 +11,7 @@
             <a href="/shows">Go back</a>
             <h1>Add a new show</h1>
     
-            <form action="/shows/create/{{x.id}}" method='POST'>
+            <form action="/shows/create" method='POST'>
                 {% csrf_token %}
                 <lable>title<lable>
                 <input type="text" name="title">

@@ -7,7 +7,7 @@ urlpatterns = [
 
     path('/new', views.omar),
 
-    path('/create/<int:id>', views.create),
+    path('/create', views.create),
 
     path('/<int:id>', views.show),
 
