@@ -8,7 +8,7 @@ def book(request):
     }
     return render(request,"book.html",context)
 
-def add_book(request):
+def add_new_book(request):
     books.objects.create(title=request.POST['title'],desc=request.POST['desc'])
     return redirect('/')
 
@@ -18,7 +18,7 @@ def author(request):
     }
     return render(request,"author.html",context)
 
-def add_author(request):
+def add_new_author(request):
     authors.objects.create(first_name=request.POST['first'],last_name=request.POST['last'],notes=request.POST['notes'])
     return redirect('/authors')
 
