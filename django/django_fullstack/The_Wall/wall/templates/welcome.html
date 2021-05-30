@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'CSS/welcome.css' %}" />
+</head>
+<body>
+    <header>
+        <h1>CodingDojo Wall</h1>
+        <p>welcome {{ request.session.first_name }}</p>
+        <a href="/logout">Logout</a>
+    </header>
+    <hr>
+    <main>
+        <form action="/newpost" method="POST">
+            {% csrf_token %}
+            <p>New Post</p>
+            <textarea class="post_box" name="post" placeholder="write your POST" required></textarea>
+            <button class="post" type="submit">Post</button>
+        </form>
+
+    {% for s_post in posts %}
+        <p class="poster">{{s_post.user_id.first_name}}-{{s_post.created_at}}</p>
+        <p class="the_post">{{s_post.post}}</p>
+        {% for comment in s_post.comments.all %}
+            <p>{{comment.user_id.first_name}}-{{comment.created_at}}</p>
+            <p>{{comment.comment}}</p>
+
+        {% endfor %}
+        <form action="/newcomment/{{s_post.id}}" method="POST">
+            {% csrf_token %}
+            <p>New comment</p>
+            <textarea name="comment" class="comment_box" placeholder="write your comment" required></textarea>
+            <button class="comment" type="submit">comment</button>
+        </form>
+    {% endfor %}
+    </main>
+</body>
+</html>
